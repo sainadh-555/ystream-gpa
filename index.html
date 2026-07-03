@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y Stream GPA Calculator</title>
+    <!-- Modern Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/cdt5FMLNCnk?autoplay=1&mute=1&loop=1&playlist=cdt5FMLNCnk&controls=0&showinfo=0&autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="container">
+        <h1>Y Stream GPA Calculator</h1>
+        <h1>Author - cheppanu brother </h1>
+        <p class="subtitle">Enter your marks below to calculate your final grade.</p>
+
+        <div class="subjects-grid">
+            <!-- 1. MS -->
+            <div class="subject-card">
+                <h3>1. MS</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="ms_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Sem</label>
+                        <input type="number" id="ms_sem" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. BEEE -->
+            <div class="subject-card">
+                <h3>2. BEEE</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="beee_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Lab</label>
+                        <input type="number" id="beee_lab" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Sem</label>
+                        <input type="number" id="beee_sem" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. EC -->
+            <div class="subject-card">
+                <h3>3. EC</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="ec_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Lab</label>
+                        <input type="number" id="ec_lab" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Sem</label>
+                        <input type="number" id="ec_sem" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. EPCS -->
+            <div class="subject-card">
+                <h3>4. EPCS</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="epcs_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Lab</label>
+                        <input type="number" id="epcs_lab" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. CS -->
+            <div class="subject-card">
+                <h3>5. CS</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="cs_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Lab</label>
+                        <input type="number" id="cs_lab" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. CODE -->
+            <div class="subject-card">
+                <h3>6. CODE</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="code_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Sem</label>
+                        <input type="number" id="code_sem" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. PSUP -->
+            <div class="subject-card">
+                <h3>7. PSUP</h3>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label>Internal</label>
+                        <input type="number" id="psup_int" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Lab</label>
+                        <input type="number" id="psup_lab" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Sem</label>
+                        <input type="number" id="psup_sem" placeholder="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateGPA()">Calculate Result</button>
+
+        <div id="results-section">
+            <div class="results-card">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Subject Grades</h3>
+                <div class="results-grid">
+                    <div class="result-item"><span>MS</span><strong id="res_ms">0</strong></div>
+                    <div class="result-item"><span>BEEE</span><strong id="res_beee">0</strong></div>
+                    <div class="result-item"><span>EC</span><strong id="res_ec">0</strong></div>
+                    <div class="result-item"><span>EPCS</span><strong id="res_epcs">0</strong></div>
+                    <div class="result-item"><span>CS</span><strong id="res_cs">0</strong></div>
+                    <div class="result-item"><span>CODE</span><strong id="res_code">0</strong></div>
+                    <div class="result-item"><span>PSUP</span><strong id="res_psup">0</strong></div>
+                </div>
+                <div class="final-grade">
+                    <div>
+                        <div class="label">Absolute Grade</div>
+                        <span id="res_final">0</span>
+                    </div>
+                </div>
+                <div class="grade-note">
+                    <strong>Note:</strong> This is only a minimum estimate of your CGPA based on Y Stream structure. It
+                    is an absolute grade, not a
+                    relative grade. It's not final, and your GPA will likely increase! Creators's gpa 8.92
+                </div>
+                <div class="motivation-link">
+                    <a href="https://youtu.be/cdt5FMLNCnk" target="_blank">Need motivation? Click here.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

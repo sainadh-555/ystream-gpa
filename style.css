@@ -26,7 +26,7 @@ body {
     height: 100vh;
     z-index: 0;
     overflow: hidden;
-    opacity: 1;
+    opacity: 1 ;
     /* Adjusted for higher transparency */
 }
 
@@ -187,7 +187,7 @@ h1 {
 
 .inputs-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 15px;
 }
 

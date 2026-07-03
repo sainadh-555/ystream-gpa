@@ -26,12 +26,17 @@ body {
     height: 100vh;
     z-index: 0;
     overflow: hidden;
-    opacity: 0.4; /* Adjusted for higher transparency */
+    opacity: 1; /* Adjusted for higher transparency */
 }
 .video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100vw;
-    height: 100vh;
-    transform: scale(1.35); /* Avoids black borders */
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    transform: translate(-50%, -50%) scale(1.1);
     pointer-events: none;
 }
 /* Removed overlay to make video clear */
@@ -86,7 +91,7 @@ h1 {
 
 .subjects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
     margin-bottom: 40px;
 }
@@ -148,7 +153,7 @@ h1 {
 
 .inputs-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
 }
 
@@ -382,8 +387,15 @@ h1 {
 }
 
 @media (max-width: 600px) {
+    body { padding: 15px 10px; }
     .container { padding: 20px; }
-    h1 { font-size: 2rem; }
+    h1 { font-size: 1.8rem; }
+    .subjects-grid { grid-template-columns: 1fr; gap: 15px; }
     .inputs-row { flex-direction: column; gap: 10px; }
-    .final-grade span { font-size: 3rem; }
+    .results-card { padding: 20px; }
+    .results-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .result-item { padding: 10px; }
+    .result-item strong { font-size: 1.2rem; }
+    .final-grade { padding: 20px; }
+    .final-grade span { font-size: 2.5rem; }
 }
